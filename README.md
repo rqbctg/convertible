@@ -29,7 +29,7 @@ Designed for iOS and iPadOS using Swift Package Manager.
 3. Enter the repo URL:
 
    ```
-   https://github.com/<your-username>/ConvertibleUtils.git
+   https://github.com/rqbctg/convertible.git
    ```
 
 4. Choose **Dependency Rule** → “Up to Next Major” from `1.0.0`.  
@@ -39,7 +39,7 @@ Designed for iOS and iPadOS using Swift Package Manager.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/<your-username>/ConvertibleUtils.git", from: "1.0.0")
+    .package(url: "https://github.com/rqbctg/convertible.git", from: "1.0.0")
 ],
 targets: [
     .target(
