@@ -97,6 +97,18 @@ public extension String {
     }
 }
 
+///limit the number of digits after the decimal point when converting a string to a Double or Float.
+///`let resutl = "3.13344456788".toDouble.digit(1)`
+///print = `3.1`
+public extension BinaryFloatingPoint {
+    /// Rounds the number to a specified number of decimal places
+    func digit(_ places: Int) -> Self {
+        guard places >= 0 else { return self }
+        let multiplier = Self(pow(10.0, Double(places)))
+        return (self * multiplier).rounded() / multiplier
+    }
+}
+
 // MARK: - Date Conversions
 public extension Date {
     
