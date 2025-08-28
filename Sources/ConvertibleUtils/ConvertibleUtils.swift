@@ -3,70 +3,47 @@
 
 import Foundation
 
-// MARK: - Int Conversions
-public extension Int {
-    
-    /// Converts Int → Double
+//MARK: - Numeric Conversions
+public extension Numeric {
+    /// Converts Numeric → String
     @inlinable
-    var toDouble: Double {
-        return Double(self)
-    }
-    
-    /// Converts Int → String
-    @inlinable
-    var toString: String {
-        return String(self)
-    }
-    
-    /// Converts Int → Float
-    @inlinable
-    var toFloat: Float {
-        return Float(self)
-    }
+    var toString: String { String(describing: self) }
 }
 
-// MARK: - Double Conversions
-public extension Double {
-    
-    /// Converts Double → Int (truncates decimals)
+public extension Numeric where Self: BinaryInteger {
+    /// Converts BinaryInteger → Int
     @inlinable
-    var toInt: Int {
-        return Int(self)
-    }
+    var toInt: Int { Int(self) }
     
-    /// Converts Double → String
+    /// Converts BinaryInteger → Float
     @inlinable
-    var toString: String {
-        return String(self)
-    }
+    var toFloat: Float { Float(self) }
     
-    /// Converts Double → Float (possible precision loss)
+    /// Converts BinaryInteger → Double
     @inlinable
-    var toFloat: Float {
-        return Float(self)
-    }
+    var toDouble: Double { Double(self) }
+    
+    /// Converts BinaryInteger → CGFloat
+    @inlinable
+    var toCGFloat: CGFloat { CGFloat(self) }
 }
 
-// MARK: - Float Conversions
-public extension Float {
-    
-    /// Converts Float → Int (truncates decimals)
+public extension Numeric where Self: BinaryFloatingPoint {
+    /// Converts BinaryFloatingPoint → Int  (truncates decimals)
     @inlinable
-    var toInt: Int {
-        return Int(self)
-    }
+    var toInt: Int { Int(self) }
     
-    /// Converts Float → String
+    /// Converts BinaryFloatingPoint → Float
     @inlinable
-    var toString: String {
-        return String(self)
-    }
+    var toFloat: Float { Float(self) }
     
-    /// Converts Float → Double
+    /// Converts BinaryFloatingPoint → Double
     @inlinable
-    var toDouble: Double {
-        return Double(self)
-    }
+    var toDouble: Double { Double(self) }
+    
+    /// Converts BinaryFloatingPoint → CGFloat
+    @inlinable
+    var toCGFloat: CGFloat { CGFloat(self) }
 }
 
 // MARK: - String Conversions
